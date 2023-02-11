@@ -1,0 +1,49 @@
+#NavBar{
+   padding:10px;
+   background-color: "#FFFFFF";
+   .home{
+      color:pink;
+      font-size: 34px;
+   }
+   
+   .name {
+      max-width: 361px;
+      margin-top: 0px;
+      padding-top: 0px;
+
+   }
+   .dropdown-toggle::after{
+      content:none
+   }
+   .dropdown-toggle.nav-link{
+      color:skyblue;
+      &:hover{
+         color:white;
+         background-color: skyblue;
+      }
+   }
+   .btn{
+      background-color:skyblue;
+      color:white;
+      border-radius: 20px;
+      padding:10px;
+      padding-left:40px;
+      padding-right:40px;
+      margin-right:60px;
+      
+   }
+      
+   // .nav-link{
+   //    color:"#85BAD1";
+   // }
+   // a {
+   //    #basic-nav-dropdown{
+   //       .nav-link{
+   // color: "#85BAD1";
+   //       }
+   // }
+   //    }
+}
+
+
+

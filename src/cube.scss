@@ -1,0 +1,33 @@
+#cube{
+    .side1{
+        background-color:black;
+        width:100%;
+        height:500px;
+    }
+    .side2{
+
+        background-color: pink;
+            width: 100%;
+            height: 500px;
+    }
+    .side3{
+        background-color:red;
+            width: 100%;
+            height: 500px;
+
+    }
+    p{
+        text-align: center;
+        font-size:100px;
+        color:white;
+        
+    }
+
+    .side2{
+        transform:rotate3d(1,0,1,90);
+        transition: 'transform 150ms ease'
+    }
+    .side3{
+        transform: rotate3d(1, 0, 0, 180);
+        }
+    }
