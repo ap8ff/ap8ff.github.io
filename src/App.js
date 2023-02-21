@@ -1,15 +1,16 @@
 import logo from './logo.svg';
-import './App.css';
-import NavBar from './NavBar.js'
-import AboutMe from './BodyContainers/AboutMe'
+import './Styles/App.scss';
+import NavBar from './Module_Parts/NavBar.js'
+import AboutMe from './Module_Parts/AboutMe'
 // import Cube from './cube.js';
 
 
 function App() {
   return (
-    <div >
+    <div id = "App" >
+      
       <NavBar />
-      <AboutMe />
+      <AboutMe/>
     </div>
       
   );

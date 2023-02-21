@@ -1,13 +1,18 @@
-import './NavBar.scss';
+import '../Styles/NavBar.scss';
 import * as React from "react";
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
-import astronomicals  from "./images/astranomicals.png";
+import pentaLogo  from "../images/Penta_Logo_White.png";
 
 
 
 const NavBar = () => {
     const [show, setShow] = useState(false);
+    const [navBarClass, setnavBarClass] = useState(false);
+    useEffect(() => {
+        changeNavBackground()
+        window.addEventListener("scroll", changeNavBackground)
+    })
     const showDropdown = (e) => {
         setShow(!show);
     }
@@ -15,19 +20,29 @@ const NavBar = () => {
         setShow(false);
     }
 
+    const changeNavBackground = () => {
+        if (window.scrollY > 60) {
+            setnavBarClass(true)
+        } else {
+            setnavBarClass(false) // revisit this part
+        }
+    }
+
         return (
      
-            <Navbar id = "NavBar" collapseOnSelect  expand="lg">
+            <Navbar id="NavBar" navbar sticky-top  collapseOnSelect>
           
-                <Navbar.Brand href="#home" className="home">Anju Puthenveetil</Navbar.Brand>
+                <Navbar.Brand href="#index" className="home">
+                    <Image className="penta-icon" src={pentaLogo} alt="Penta" />
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav ml-auto"  />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                     
-                        <NavDropdown title="About Me" id="basic-nav-dropdown">
+                        <NavDropdown title="Solutions" id="basic-nav-dropdown">
                            
                         </NavDropdown>
-                        <NavDropdown title="Services" show={show} onMouseEnter={showDropdown}
+                        <NavDropdown title="Industries" show={show} onMouseEnter={showDropdown}
                             onMouseLeave={hideDropdown} id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
@@ -39,10 +54,10 @@ const NavBar = () => {
                                Web Development
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <NavDropdown title="CaseStudies"  id="basic-nav-dropdown">
+                        <NavDropdown title="Services"  id="basic-nav-dropdown">
                          
                         </NavDropdown>
-                        <NavDropdown title="Articles"  id="basic-nav-dropdown">
+                        <NavDropdown title="About"  id="basic-nav-dropdown">
                          
                         </NavDropdown>
                         <NavDropdown title="Contact" id="basic-nav-dropdown">
@@ -52,7 +67,7 @@ const NavBar = () => {
                     </Nav>
                   
                 </Navbar.Collapse>
-                <button class="btn  my-2 my-sm-0 me-auto" >(949) 478-0305</button>
+                <button class="btn  my-2 my-sm-0 me-auto" >Get More Information</button>
         
             </Navbar>
                    
