@@ -8,7 +8,8 @@ import pentaLogo  from "../images/Penta_Logo_White.png";
 
 const NavBar = () => {
     const [show, setShow] = useState(false);
-    const [navBarClass, setnavBarClass] = useState(false);
+    const [navBarClass, setnavBarClass] = useState("");
+    const [navLinkColor, setnavLinkColor] = useState("white")
     useEffect(() => {
         changeNavBackground()
         window.addEventListener("scroll", changeNavBackground)
@@ -22,47 +23,67 @@ const NavBar = () => {
 
     const changeNavBackground = () => {
         if (window.scrollY > 60) {
-            setnavBarClass(true)
+            setnavBarClass("white")
+            setnavLinkColor(" rgb(26, 108, 177)")
         } else {
-            setnavBarClass(false) // revisit this part
+            setnavBarClass("transparent") // revisit this part
+            setnavLinkColor("white")
         }
     }
 
         return (
      
-            <Navbar id="NavBar" navbar sticky-top  collapseOnSelect>
+            <Navbar id="NavBar" fixed="top" navbar collapseOnSelect style={{ backgroundColor: navBarClass }}>
           
                 <Navbar.Brand href="#index" className="home">
                     <Image className="penta-icon" src={pentaLogo} alt="Penta" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav ml-auto"  />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse id="basic-navbar-nav" >
                     <Nav className="me-auto">
-                    
-                        <NavDropdown title="Solutions" id="basic-nav-dropdown">
-                           
-                        </NavDropdown>
-                        <NavDropdown title="Industries" show={show} onMouseEnter={showDropdown}
+                       
+                      
+                        <NavDropdown title={
+                            <span style={{ color: navLinkColor }}>Solutions</span>
+                        } show={show} onMouseEnter={showDropdown}
                             onMouseLeave={hideDropdown} id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
-                                Search Engine Optimization
+                                ConcreteContractors
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Content Writing</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Mechanical HVAC contractors</NavDropdown.Item>
                             
                             <NavDropdown.Item href="#action/3.4">
-                               Web Development
+                               Industrial Contractors
                             </NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title="Services"  id="basic-nav-dropdown">
+                        </NavDropdown>  
+                        <NavDropdown title={
+                            <span style={{ color: navLinkColor }}>Services</span>
+                        } id="basic-nav-dropdown">
                          
                         </NavDropdown>
-                        <NavDropdown title="About"  id="basic-nav-dropdown">
+                        <NavDropdown title={
+                            <span style={{ color: navLinkColor }}>Industries</span>
+                        }  id="basic-nav-dropdown">
                          
                         </NavDropdown>
-                        <NavDropdown title="Contact" id="basic-nav-dropdown">
+                        <NavDropdown title={
+                            <span style={{ color: navLinkColor }}>About</span>
+                        } id="basic-nav-dropdown">
                           
                             
+                        </NavDropdown>
+                        <NavDropdown title={
+                            <span style={{ color: navLinkColor }}>Resources</span>
+                        } id="basic-nav-dropdown">
+
+
+                        </NavDropdown>
+                        <NavDropdown title={
+                            <span style={{ color: navLinkColor }}>Contact</span>
+                        } id="basic-nav-dropdown">
+
+
                         </NavDropdown>
                     </Nav>
                   

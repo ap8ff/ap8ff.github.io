@@ -7,10 +7,13 @@ import AboutMe from './Module_Parts/AboutMe'
 
 function App() {
   return (
-    <div id = "App" >
-      
+    <div id="App" >
       <NavBar />
-      <AboutMe/>
+      <div class="workerSection">
+       
+        <AboutMe />
+      </div>
+      
     </div>
       
   );

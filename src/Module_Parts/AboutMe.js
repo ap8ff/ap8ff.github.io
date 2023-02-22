@@ -5,7 +5,9 @@ import PentaWorkerImage from "../images/Penta-Construction-Management-Software-h
 export default  function AboutMe () {
     return (
       <div id="aboutMe">
-        <p>Construction Management Software and ERP</p> 
+        
+        <Image src={PentaWorkerImage} alt="Construction Management Software and ERP"></Image> 
+        <h1>Construction Management Software and ERP</h1>
       </div>
     )
 }

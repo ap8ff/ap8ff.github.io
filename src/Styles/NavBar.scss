@@ -1,8 +1,9 @@
 #NavBar{
    padding:10px;
-   background-color: "#FFFFFF";
+ 
+   
    .home{
-            background-color: blue;
+            background-color: rgb(26, 108, 177);;
          
    }
    .penta-icon{
@@ -16,13 +17,16 @@
       padding-top: 0px;
 
    }
+  
    .dropdown-toggle::after{
       content:none
    }
    .dropdown-toggle.nav-link{
-      color:skyblue;
+        // color: black;
+         font-size: 17px;
+         font-weight: 500;
       &:hover{
-         color:white;
+         color:rgb(26, 108, 177);
          background-color: skyblue;
       }
    }
